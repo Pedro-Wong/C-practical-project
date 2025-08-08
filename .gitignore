@@ -1,0 +1,10 @@
+.vs/
+Work2/x64/
+x64/
+*.sln
+
+*vcxproj
+*.filters
+*.user
+
+
