@@ -4,8 +4,37 @@
 
 //enum
 
+enum dificuldade {MF = 1, F, M, D, MD};
 
 //structs
+struct horario 
+{
+	int hora;
+	int minuto;
+};
+
+struct questoes 
+{
+	dificuldade dificuldadeQuestao;
+	horario horaInicio;
+	horario horaFim;
+};
+
+struct media 
+{
+	dificuldade grauDifi;
+	horario tempo;
+
+};
+
+struct participantes
+{
+	char nome[50];
+	questoes* questoesEn;
+
+
+};
+
 
 
 //functions
