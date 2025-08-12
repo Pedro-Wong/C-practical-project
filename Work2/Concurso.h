@@ -39,6 +39,12 @@ struct participantes
 
 //functions
 void teste();
+int numeroParticipante();
+int numeroQuestoes();
+void cadastroQuestoes(int, int, participantes*);
+
+void tracos();
+void asteristicos();
 
 
 #endif // !CONCURSO.H

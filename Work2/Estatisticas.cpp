@@ -6,9 +6,21 @@ using namespace std;
 
 int main(void)
 {
-	teste();
+	
+	
+	
+	asteristicos();
+	tracos();
+
+	int numeroPart = numeroParticipante();
+	int numeroQuest = numeroQuestoes();
+
+	participantes* vetorParticipantes = new participantes[numeroPart];
+
+	cadastroQuestoes(numeroPart, numeroQuest, vetorParticipantes);
 
 
 
+	delete[] vetorParticipantes;
 	return 0;
 }
