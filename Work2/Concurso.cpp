@@ -24,6 +24,7 @@ int numeroQuestoes()
 	int q = 0;
 	cout << "Quantas questoes? ";
 	cin >> q;
+	cout << "\n";
 
 	return q;
 
@@ -35,7 +36,7 @@ void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes
 
 
 	
-	int letra = 'A';
+	char letra = 'A';
 
 
 	for (int i = 0; i < numeroParticipantes; i++)
@@ -44,41 +45,40 @@ void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes
 		cout << "Digite o nome do " << i + 1 << " participante: ";
 		cin >> ptr[i].nome;
 		tracos();
-		cout << "\n\n";
+		cout << "\n";
 
+		//criar delete para esse new
 		ptr[i].questoesEn = new questoes[numeroQuestoes];
 
 		for (int j = 0; j < numeroQuestoes; j++)
 		{
-
-			cout << "Questao " << char(letra+j) << endl;
+			/*char(letra + j)*/
+			cout << "Questao " << letra++ << endl;
 
 			int difi;
-			cout << "Dificuldade: (1=MF, 2=F, 3=M, 4=D, 5=MD)";
+			cout << "Dificuldade: (1=MF, 2=F, 3=M, 4=D, 5=MD) ";
 			cin >> difi;
 			ptr[i].questoesEn[j].dificuldadeQuestao = dificuldade(difi);
 
-			cout << endl;
-		
-			cout << "Hora de inicio: (HH:MM)";
+			cout << "Hora de inicio: (HH:MM) ";
 			cin >> ptr[i].questoesEn[j].horaInicio.hora;
 			cin.ignore();
 			cin >> ptr[i].questoesEn[j].horaInicio.minuto;
-			cout << endl;
-
-			cout << "Hora de fim: (HH:MM)";
+			
+			cout << "Hora de fim: (HH:MM) ";
 			cin >> ptr[i].questoesEn[j].horaFim.hora;
 			cin.ignore();
 			cin >> ptr[i].questoesEn[j].horaFim.minuto;
 
+			cout << "\n";
 		}
 
-
+		letra = 'A';
+		tracos();
+		cout << "\n";
 		
 
 	}
-
-
 
 
 

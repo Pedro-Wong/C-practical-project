@@ -43,6 +43,9 @@ int numeroParticipante();
 int numeroQuestoes();
 void cadastroQuestoes(int, int, participantes*);
 
+void resumoParticipantes(participantes*);
+
+
 void tracos();
 void asteristicos();
 
