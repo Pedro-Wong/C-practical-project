@@ -1,5 +1,6 @@
 #include "Concurso.h"
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -34,10 +35,7 @@ int numeroQuestoes()
 void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes* ptr)
 {
 
-
-	
 	char letra = 'A';
-
 
 	for (int i = 0; i < numeroParticipantes; i++)
 	{
@@ -77,10 +75,7 @@ void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes
 		tracos();
 		cout << "\n";
 		
-
 	}
-
-
 
 }
 
@@ -88,7 +83,42 @@ void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes
 
 
 
+void resumoParticipantes(int numeroParticipante,int numeroQuestoes,participantes* ptrParticipantes)
+{
+	char letra = 'A';
 
+	tracos();
+	cout << "Resumo por participante: \n";
+	tracos();
+
+
+
+	for (int i = 0; i < numeroParticipante; i++)
+	{
+		cout << ptrParticipantes[i].nome << ": \n";
+
+		for (int y = 0; y < numeroQuestoes; y++) 
+		{
+			cout << "\t" << letra++ << " (" << ptrParticipantes[i].questoesEn[y].dificuldadeQuestao << ") " << setfill('0') << setw(2) <<
+			ptrParticipantes[i].questoesEn[y].horaInicio.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[y].horaInicio.minuto <<
+			" as " << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[y].horaFim.hora << ":" << setfill('0') << setw(2) << 
+			ptrParticipantes[i].questoesEn[y].horaFim.minuto << "  (  calculo   )\n";
+
+		}
+
+		letra = 'A';
+
+
+	}
+
+
+	tracos();
+
+
+
+
+
+}
 
 
 

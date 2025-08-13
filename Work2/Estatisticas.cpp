@@ -17,7 +17,15 @@ int main(void)
 
 	participantes* vetorParticipantes = new participantes[numeroPart];
 
+	//cadastro de participantes
 	cadastroQuestoes(numeroPart, numeroQuest, vetorParticipantes);
+
+
+	//resumo participantes
+	resumoParticipantes(numeroPart,numeroQuest,vetorParticipantes);
+
+
+
 
 
 

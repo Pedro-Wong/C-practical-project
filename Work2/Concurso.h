@@ -43,7 +43,7 @@ int numeroParticipante();
 int numeroQuestoes();
 void cadastroQuestoes(int, int, participantes*);
 
-void resumoParticipantes(participantes*);
+void resumoParticipantes(int,int,participantes*);
 
 
 void tracos();
