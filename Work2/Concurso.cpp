@@ -6,7 +6,6 @@ using namespace std;
 
 void teste()
 {
-
 	cout << "Hello World";
 }
 
@@ -17,7 +16,6 @@ int numeroParticipante()
 	cin >> p;
 
 	return p;
-
 }
 
 int numeroQuestoes()
@@ -28,8 +26,6 @@ int numeroQuestoes()
 	cout << "\n";
 
 	return q;
-
-
 }
 
 void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes* ptr)
@@ -79,10 +75,6 @@ void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes
 
 }
 
-
-
-
-
 void resumoParticipantes(int numeroParticipante,int numeroQuestoes,participantes* ptrParticipantes)
 {
 	char letra = 'A';
@@ -91,8 +83,6 @@ void resumoParticipantes(int numeroParticipante,int numeroQuestoes,participantes
 	cout << "Resumo por participante: \n";
 	tracos();
 
-
-
 	for (int i = 0; i < numeroParticipante; i++)
 	{
 		cout << ptrParticipantes[i].nome << ": \n";
@@ -100,47 +90,60 @@ void resumoParticipantes(int numeroParticipante,int numeroQuestoes,participantes
 		for (int y = 0; y < numeroQuestoes; y++) 
 		{
 			cout << "\t" << letra++ << " (" << ptrParticipantes[i].questoesEn[y].dificuldadeQuestao << ") " << setfill('0') << setw(2) <<
-			ptrParticipantes[i].questoesEn[y].horaInicio.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[y].horaInicio.minuto <<
-			" as " << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[y].horaFim.hora << ":" << setfill('0') << setw(2) << 
-			ptrParticipantes[i].questoesEn[y].horaFim.minuto << "  (  calculo   )\n";
+				ptrParticipantes[i].questoesEn[y].horaInicio.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[y].horaInicio.minuto <<
+				" as " << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[y].horaFim.hora << ":" << setfill('0') << setw(2) <<
+				ptrParticipantes[i].questoesEn[y].horaFim.minuto << " (" << calcHoras(ptrParticipantes[i].questoesEn[y].horaInicio, ptrParticipantes[i].questoesEn[y].horaFim) << " min)\n";  //"  (  calculo   )\n";
 
 		}
 
 		letra = 'A';
 
-
 	}
-
 
 	tracos();
 
+}
 
+void resumoQuestoes(int numeroPart,int numeroQuest,participantes* ptrParticipantes)
+{
+	char letra = 'A';
 
+	tracos();
+	cout << "Resumo por questao: \n";
+	tracos();
 
+	for (int j = 0; j < numeroQuest; j++)
+	{
+		cout << "Questao " << letra++ << ": \n";
+
+		for (int i = 0; i < numeroPart; i++)
+		{
+			cout <<"\t"<< ptrParticipantes[i].nome << " (" << ptrParticipantes[i].questoesEn[j].dificuldadeQuestao << ") " <<
+			setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaInicio.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaInicio.minuto << " as " <<
+			setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[i].horaFim.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaFim.minuto << " (" <<
+			calcHoras(ptrParticipantes[i].questoesEn[j].horaInicio, ptrParticipantes[i].questoesEn[j].horaFim) << " min)\n ";
+
+		}
+
+	}
 
 }
 
 
+int calcHoras(horario inicio, horario fim)
+{
+	const int conversor = 60;
+	
+	int horaFim = (fim.hora * conversor) + fim.minuto;
+	int horaInicio = (inicio.hora * conversor) + inicio.minuto;
+
+	int horaFinal = horaFim - horaInicio;
+	
+
+	return horaFinal;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 void tracos()
 {

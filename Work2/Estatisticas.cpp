@@ -24,6 +24,8 @@ int main(void)
 	//resumo participantes
 	resumoParticipantes(numeroPart,numeroQuest,vetorParticipantes);
 
+	//resumo questoes
+	resumoQuestoes(numeroPart,numeroQuest, vetorParticipantes);
 
 
 
