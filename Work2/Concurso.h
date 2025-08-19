@@ -45,6 +45,7 @@ void cadastroQuestoes(int, int, participantes*);
 
 void resumoParticipantes(int,int,participantes*);
 void resumoQuestoes(int, int, participantes*);
+void estatisticas(int, int, participantes*);
 
 int calcHoras(horario, horario);
 

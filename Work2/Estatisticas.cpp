@@ -27,7 +27,8 @@ int main(void)
 	//resumo questoes
 	resumoQuestoes(numeroPart,numeroQuest, vetorParticipantes);
 
-
+	//estatistica final
+	estatisticas(numeroPart, numeroQuest, vetorParticipantes);
 
 
 

@@ -58,12 +58,12 @@ void cadastroQuestoes(int numeroParticipantes, int numeroQuestoes, participantes
 			cin >> ptr[i].questoesEn[j].horaInicio.hora;
 			cin.ignore();
 			cin >> ptr[i].questoesEn[j].horaInicio.minuto;
-			
+			cin.ignore();
 			cout << "Hora de fim: (HH:MM) ";
 			cin >> ptr[i].questoesEn[j].horaFim.hora;
 			cin.ignore();
 			cin >> ptr[i].questoesEn[j].horaFim.minuto;
-
+			cin.ignore();
 			cout << "\n";
 		}
 
@@ -120,7 +120,7 @@ void resumoQuestoes(int numeroPart,int numeroQuest,participantes* ptrParticipant
 		{
 			cout <<"\t"<< ptrParticipantes[i].nome << " (" << ptrParticipantes[i].questoesEn[j].dificuldadeQuestao << ") " <<
 			setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaInicio.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaInicio.minuto << " as " <<
-			setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[i].horaFim.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaFim.minuto << " (" <<
+			setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaFim.hora << ":" << setfill('0') << setw(2) << ptrParticipantes[i].questoesEn[j].horaFim.minuto << " (" <<
 			calcHoras(ptrParticipantes[i].questoesEn[j].horaInicio, ptrParticipantes[i].questoesEn[j].horaFim) << " min)\n ";
 
 		}
@@ -128,6 +128,79 @@ void resumoQuestoes(int numeroPart,int numeroQuest,participantes* ptrParticipant
 	}
 
 }
+
+
+void estatisticas(int numeroPart, int numeroQuest, participantes* ptrParticipantes)
+{
+	
+	double somaQuestao = 0.0, somaTempo = 0.0, mediaQuestao = 1.0;
+	double mediaTotalDificuldade, mediaTotalTempo;
+	char letra = 'A';
+
+	/*double mediaDificuldade = 0.0, mediaTempo = 0.0, x = 1, soma = 0;*/
+	tracos();
+	cout << "Estatisticas\n";
+	tracos();
+
+	//media por questao tempo e dificuldade
+
+	
+
+
+
+
+
+
+
+	double dificuldade = 0.0;
+	double tempo = 0.0;
+
+
+
+	//media total dificuldade e tempo 
+	for (int i = 0; i < numeroQuest; i++)
+	{
+		somaQuestao = 0;
+		somaTempo = 0;
+
+		for (int j = 0; j < numeroPart; j++)
+		{
+			somaQuestao += ptrParticipantes[j].questoesEn[i].dificuldadeQuestao;
+
+			somaTempo += calcHoras(ptrParticipantes[j].questoesEn[i].horaInicio, ptrParticipantes[j].questoesEn[i].horaFim);
+
+			dificuldade += somaQuestao;
+			tempo += somaTempo;
+
+			
+			
+
+		}
+		somaQuestao /= numeroPart ;
+		somaTempo /= numeroPart;
+
+
+		cout << "Questão " << letra++ << ": Dificuldade (" << somaQuestao << ") - Tempo (" << somaTempo<< ")\n";
+
+	
+		
+
+
+
+	}
+	//media total dificuldade de questoes
+	mediaTotalDificuldade = dificuldade/(numeroQuest * numeroPart);
+	//media total dificuldade tempo
+	mediaTotalTempo = tempo/ (numeroQuest * numeroPart);
+
+	cout << "\nMedia total do concurso: Dificuldade (" << mediaTotalDificuldade << ") - Tempo ("<< mediaTotalTempo<< ")";
+
+	
+}
+
+
+
+
 
 
 int calcHoras(horario inicio, horario fim)
