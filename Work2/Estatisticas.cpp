@@ -30,6 +30,9 @@ int main(void)
 	//estatistica final
 	estatisticas(numeroPart, numeroQuest, vetorParticipantes);
 
+	//deletar memoria do vetor de participantes 
+
+	deletarMemoriaQuestoes(vetorParticipantes, numeroPart, numeroQuest);
 
 
 	delete[] vetorParticipantes;

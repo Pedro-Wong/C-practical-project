@@ -49,6 +49,7 @@ void estatisticas(int, int, participantes*);
 
 int calcHoras(horario, horario);
 
+void deletarMemoriaQuestoes(participantes*, int, int);
 void tracos();
 void asteristicos();
 

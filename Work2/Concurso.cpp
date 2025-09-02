@@ -218,6 +218,22 @@ int calcHoras(horario inicio, horario fim)
 
 }
 
+void deletarMemoriaQuestoes(participantes* ptr, int numeroPart)
+{
+	for (int i = 0; i < numeroPart; i++ )
+	{
+		delete[] ptr[i].questoesEn;
+	}
+}
+
+
+
+
+
+
+
+
+
 void tracos()
 {
 	for (int i = 1; i <=20; i++)
